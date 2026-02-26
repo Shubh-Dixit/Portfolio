@@ -3,6 +3,14 @@ import { Github, ExternalLink } from 'lucide-react';
 export function Projects() {
   const projects = [
     {
+      title: 'AceBank - Full-Stack Banking Application',
+      description: 'A secure banking web application featuring user authentication, real-time transaction processing, and automated email notifications. Developed using a robust Java backend with JSP and Servlets, and integrated with a MySQL database for reliable financial data management.',
+      tags: ['Java', 'JSP', 'Servlet', 'MySQL', 'JDBC', 'Maven', 'HTML/CSS', 'JavaScript'],
+      github: 'https://github.com/Shubh-Dixit/BankingApp.git', // Update with specific repo link if available
+      //demo: '#'
+      gradient: 'from-amber-500 to-orange-600',
+    },
+    {
       title: 'ML-Based Power Infrastructure Recommendation System',
       description: 'Advanced recommendation system using K-Means clustering for project classification and Random Forest multi-output prediction. Features a modern React TypeScript frontend with Tailwind CSS and Flask backend for real-time predictions.',
       tags: ['Python', 'Flask', 'React', 'TypeScript', 'Scikit-learn', 'K-Means', 'Random Forest', 'Tailwind CSS'],
