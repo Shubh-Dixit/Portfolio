@@ -5,7 +5,7 @@ export function About() {
     {
       icon: GraduationCap,
       title: 'Education',
-      description: 'B.Tech CSE at LPU (CGPA 8.21)',
+      description: 'B.Tech CSE at LPU (CGPA 8.22)',
     },
     {
       icon: Code2,
@@ -39,7 +39,7 @@ export function About() {
           {/* Left - Text Content */}
           <div className="space-y-6">
             <p className="text-lg text-foreground/90 leading-relaxed">
-              Hi! I'm <span className="font-semibold text-[#6366f1]">Shubh Dixit</span>, a B.Tech Computer Science and Engineering student at Lovely Professional University with a CGPA of 8.21.
+              Hi! I'm <span className="font-semibold text-[#6366f1]">Shubh Dixit</span>, a B.Tech Computer Science and Engineering student at Lovely Professional University with a CGPA of 8.22.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
               I'm passionate about building innovative solutions that bridge machine learning and web development. With strong expertise in <span className="font-semibold text-foreground">Data Structures & Algorithms</span>, <span className="font-semibold text-foreground">Object-Oriented Programming</span>, and <span className="font-semibold text-foreground">ML frameworks</span>, I love creating end-to-end applications that solve real-world problems.

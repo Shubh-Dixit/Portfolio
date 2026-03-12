@@ -6,13 +6,24 @@ export function Hero() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
       {/* Background gradient */}
       <div className="absolute inset-0 bg-gradient-to-br from-[#6366f1]/20 via-transparent to-[#a855f7]/20 pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(99,102,241,0.1),transparent)]" />
       
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
+        {/* Profile Picture */}
+        <div className="flex justify-center mb-8">
+          <div className="relative w-48 h-64 md:w-56 md:h-72 rounded-2xl p-1 bg-gradient-to-tr from-[#6366f1] to-[#a855f7]">
+            <img 
+              src="/resources/shubh_dixit_profile.jpg" 
+              alt="Shubh Dixit" 
+              className="w-full h-full object-cover object-top rounded-2xl border-4 border-background"
+            />
+          </div>
+        </div>
+
         {/* Greeting */}
         <div className="inline-block mb-6 px-4 py-2 rounded-full bg-card/50 border border-border backdrop-blur-sm">
           <p className="text-sm text-muted-foreground">👋 Welcome to my portfolio</p>
@@ -27,7 +38,7 @@ export function Hero() {
 
         {/* Tagline */}
         <p className="text-xl md:text-2xl lg:text-3xl text-foreground/90 mb-4 font-medium">
-          Software Engineer | ML & Full-Stack Developer
+          Software Engineer | ML & Full-Stack Developer | Java Backend Developer
         </p>
         <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
           DSA Enthusiast • Building end-to-end ML + Web Applications

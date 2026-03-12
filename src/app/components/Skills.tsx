@@ -1,30 +1,36 @@
-import { Code, Layers, Database, Wrench } from 'lucide-react';
+import { Code, Layers, Wrench, Cpu, Users } from 'lucide-react';
 
 export function Skills() {
   const skillCategories = [
     {
       icon: Code,
       title: 'Languages',
-      skills: ['C++', 'Java', 'Python', 'C'],
+      skills: ['C++', 'Java', 'C', 'Python'],
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
       icon: Layers,
       title: 'Frameworks',
-      skills: ['React', 'Flask', 'Django', 'FastAPI', 'Spring Boot'],
+      skills: ['HTML/CSS', 'React', 'Flask', 'Django', 'FastAPI', 'TensorFlow', 'Spring', 'Spring Boot'],
       gradient: 'from-purple-500 to-pink-500',
     },
     {
-      icon: Database,
-      title: 'ML & Data',
-      skills: ['Scikit-learn', 'TensorFlow', 'NumPy', 'Pandas'],
+      icon: Wrench,
+      title: 'Libraries / Tools',
+      skills: ['MySQL', 'Google Colab', 'Jupyter', 'GitHub', 'Docker', 'Scikit-learn', 'NumPy', 'Pandas', 'OCR (Tesseract)', 'Gemini API', 'Git'],
+      gradient: 'from-orange-500 to-red-500',
+    },
+    {
+      icon: Cpu,
+      title: 'Core Concepts',
+      skills: ['Data Structures & Algorithms', 'OOPs', 'DBMS', 'Operating Systems'],
       gradient: 'from-green-500 to-emerald-500',
     },
     {
-      icon: Wrench,
-      title: 'Tools & Cloud',
-      skills: ['Git', 'GitHub', 'Docker', 'Firebase', 'AWS (EC2, S3)', 'MongoDB', 'MySQL'],
-      gradient: 'from-orange-500 to-red-500',
+      icon: Users,
+      title: 'Soft Skills',
+      skills: ['Problem-Solving', 'Collaborator', 'Adaptability'],
+      gradient: 'from-indigo-500 to-violet-500',
     },
   ];
 
@@ -53,8 +59,9 @@ export function Skills() {
               >
                 {/* Category Header */}
                 <div className="flex items-center gap-4 mb-6">
-                  <div className={`w-14 h-14 rounded-xl bg-gradient-to-br ${category.gradient} opacity-20 flex items-center justify-center group-hover:opacity-30 transition-opacity`}>
-                    <Icon className={`w-7 h-7 bg-gradient-to-br ${category.gradient} bg-clip-text text-transparent`} style={{ WebkitTextFillColor: 'transparent' }} />
+                  <div className="relative w-14 h-14 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${category.gradient} opacity-20 group-hover:opacity-30 rounded-xl transition-opacity`} />
+                    <Icon className="w-7 h-7 relative z-10 text-foreground" />
                   </div>
                   <h3 className="text-2xl font-semibold">{category.title}</h3>
                 </div>

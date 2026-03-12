@@ -8,7 +8,7 @@ export function Education() {
       institution: 'Lovely Professional University',
       location: 'Punjab, India',
       period: '2023 - 2027',
-      grade: 'CGPA: 8.21',
+      grade: 'CGPA: 8.22',
       icon: '🎓',
     },
     {

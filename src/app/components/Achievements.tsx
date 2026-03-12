@@ -1,26 +1,19 @@
-import { Award, Trophy, Star } from 'lucide-react';
+import { Trophy, Star, Award } from 'lucide-react';
 
 export function Achievements() {
   const achievements = [
     {
-      icon: Award,
-      title: 'Elite Certificate',
-      organization: 'NPTEL',
-      description: 'Introduction to Large Language Models',
-      color: 'from-yellow-500 to-orange-500',
-    },
-    {
       icon: Trophy,
       title: 'Second Rank (2x)',
       organization: 'CypherSchool',
-      description: 'Weekly Competitive Programming Contest',
+      description: 'Secured Second Rank twice among 2000+ participants in the Weekly Competitive Programming Contest.',
       color: 'from-blue-500 to-purple-500',
     },
     {
       icon: Star,
-      title: 'CP Training',
-      organization: 'AlgoTutor',
-      description: 'Competitive Programming Training Program',
+      title: '8th Rank',
+      organization: 'Smart India Hackathon',
+      description: 'Secured 8th Rank from Lovely Professional University in the Smart India Hackathon.',
       color: 'from-green-500 to-teal-500',
     },
   ];
@@ -31,13 +24,13 @@ export function Achievements() {
         {/* Section header */}
         <div className="mb-16 text-center">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Achievements & <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Certifications</span>
+            <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Achievements</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-[#6366f1] to-[#a855f7] mx-auto rounded-full" />
         </div>
 
         {/* Achievements Grid */}
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {achievements.map((achievement, index) => {
             const Icon = achievement.icon;
             return (
