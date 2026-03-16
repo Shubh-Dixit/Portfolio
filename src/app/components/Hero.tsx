@@ -67,7 +67,7 @@ export function Hero() {
           <button
   onClick={() =>
     window.open(
-      "https://drive.google.com/file/d/1A9lI4wo9VHTzhNXjT_j_5WBHhrMkwjGd/view",
+      "https://drive.google.com/file/d/1gxEsJSLkyWx9XWxnUGjM2KNabTf6S2Pm/view?usp=sharing",
       "_blank"
     )
   }
