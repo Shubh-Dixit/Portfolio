@@ -1,8 +1,10 @@
 import { Award, BookOpen, X } from 'lucide-react';
 import { useState } from 'react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export function Certificates() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const headerAnim = useScrollAnimation();
 
   const certificates = [
     {
@@ -27,7 +29,10 @@ export function Certificates() {
     <section id="certificates" className="px-6 py-24 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="mb-16 text-center">
+        <div
+          ref={headerAnim.ref as React.RefObject<HTMLDivElement>}
+          className={`mb-16 text-center animate-on-scroll ${headerAnim.isVisible ? 'is-visible' : ''}`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Certificates</span>
           </h2>

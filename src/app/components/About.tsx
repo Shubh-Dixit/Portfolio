@@ -1,6 +1,22 @@
 import { GraduationCap, Code2, Brain, Briefcase } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
+
+function AnimatedCard({ children, delay }: { children: React.ReactNode; delay?: string }) {
+  const { ref, isVisible } = useScrollAnimation();
+  return (
+    <div
+      ref={ref as React.RefObject<HTMLDivElement>}
+      className={`animate-on-scroll ${isVisible ? 'is-visible' : ''} ${delay ?? ''}`}
+    >
+      {children}
+    </div>
+  );
+}
 
 export function About() {
+  const headerAnim = useScrollAnimation();
+  const textAnim = useScrollAnimation();
+
   const highlights = [
     {
       icon: GraduationCap,
@@ -24,11 +40,16 @@ export function About() {
     },
   ];
 
+  const delays = ['delay-100', 'delay-200', 'delay-300', 'delay-400'];
+
   return (
     <section id="about" className="px-6 py-24 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="mb-16 text-center">
+        <div
+          ref={headerAnim.ref as React.RefObject<HTMLDivElement>}
+          className={`mb-16 text-center animate-on-scroll ${headerAnim.isVisible ? 'is-visible' : ''}`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             About <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Me</span>
           </h2>
@@ -37,15 +58,18 @@ export function About() {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Left - Text Content */}
-          <div className="space-y-6">
+          <div
+            ref={textAnim.ref as React.RefObject<HTMLDivElement>}
+            className={`space-y-6 animate-on-scroll ${textAnim.isVisible ? 'is-visible' : ''}`}
+          >
             <p className="text-lg text-foreground/90 leading-relaxed">
               Hi! I'm <span className="font-semibold text-[#6366f1]">Shubh Dixit</span>, a B.Tech Computer Science and Engineering student at Lovely Professional University with a CGPA of 8.22.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              I'm passionate about building innovative solutions that bridge machine learning and web development. With strong expertise in <span className="font-semibold text-foreground">Data Structures & Algorithms</span>, <span className="font-semibold text-foreground">Object-Oriented Programming</span>, and <span className="font-semibold text-foreground">ML frameworks</span>, I love creating end-to-end applications that solve real-world problems.
+              I'm passionate about building innovative solutions that bridge machine learning and web development. With strong expertise in <span className="font-semibold text-foreground">Data Structures &amp; Algorithms</span>, <span className="font-semibold text-foreground">Object-Oriented Programming</span>, and <span className="font-semibold text-foreground">ML frameworks</span>, I love creating end-to-end applications — from scalable full-stack systems using React, Flask, Django, and FastAPI to ML-powered recommendation systems that solve real-world problems.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed">
-              My experience spans from developing ML-powered recommendation systems to building scalable full-stack applications using modern technologies like React, Flask, Django, and FastAPI. I'm always eager to learn new technologies and take on challenging projects.
+              What started as curiosity about how recommendation systems work turned into a passion for building full-stack ML applications from data pipeline to deployed UI.
             </p>
           </div>
 
@@ -54,16 +78,15 @@ export function About() {
             {highlights.map((item, index) => {
               const Icon = item.icon;
               return (
-                <div
-                  key={index}
-                  className="group p-6 bg-card border border-border rounded-xl hover:border-[#6366f1]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#6366f1]/10"
-                >
-                  <div className="mb-4 w-12 h-12 rounded-lg bg-gradient-to-br from-[#6366f1]/20 to-[#a855f7]/20 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6 text-[#6366f1]" />
+                <AnimatedCard key={index} delay={delays[index]}>
+                  <div className="group p-6 bg-card border border-border rounded-xl hover:border-[#6366f1]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#6366f1]/10">
+                    <div className="mb-4 w-12 h-12 rounded-lg bg-gradient-to-br from-[#6366f1]/20 to-[#a855f7]/20 flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <Icon className="w-6 h-6 text-[#6366f1]" />
+                    </div>
+                    <h3 className="font-semibold mb-2">{item.title}</h3>
+                    <p className="text-sm text-muted-foreground">{item.description}</p>
                   </div>
-                  <h3 className="font-semibold mb-2">{item.title}</h3>
-                  <p className="text-sm text-muted-foreground">{item.description}</p>
-                </div>
+                </AnimatedCard>
               );
             })}
           </div>

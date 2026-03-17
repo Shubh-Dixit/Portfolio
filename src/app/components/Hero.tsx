@@ -15,11 +15,11 @@ export function Hero() {
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Profile Picture */}
         <div className="flex justify-center mb-8">
-          <div className="relative w-48 h-64 md:w-56 md:h-72 rounded-2xl p-1 bg-gradient-to-tr from-[#6366f1] to-[#a855f7]">
+          <div className="relative w-48 h-48 rounded-full p-1 bg-gradient-to-tr from-[#6366f1] to-[#a855f7]">
             <img 
               src="/resources/shubh_dixit_profile.jpg" 
               alt="Shubh Dixit" 
-              className="w-full h-full object-cover object-top rounded-2xl border-4 border-background"
+              className="w-full h-full object-cover object-top rounded-full border-4 border-background"
             />
           </div>
         </div>
@@ -38,7 +38,7 @@ export function Hero() {
 
         {/* Tagline */}
         <p className="text-xl md:text-2xl lg:text-3xl text-foreground/90 mb-4 font-medium">
-          Software Engineer | ML & Full-Stack Developer | Java Backend Developer
+          Building ML-powered full-stack applications | Java Backend Developer
         </p>
         <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
           DSA Enthusiast • Building end-to-end ML + Web Applications
@@ -84,15 +84,6 @@ export function Hero() {
 
         {/* Social Links */}
         <div className="flex items-center justify-center gap-6">
-          <a
-            href="https://github.com/Shubh-Dixit"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-[#6366f1] transition-colors"
-            aria-label="GitHub"
-          >
-            <Github className="w-6 h-6" />
-          </a>
           <a
             href="https://www.linkedin.com/in/shubh-dixit/"
             target="_blank"

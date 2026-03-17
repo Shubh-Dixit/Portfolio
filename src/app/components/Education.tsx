@@ -1,6 +1,9 @@
 import { GraduationCap, Calendar, MapPin } from 'lucide-react';
+import { useScrollAnimation } from '../hooks/useScrollAnimation';
 
 export function Education() {
+  const headerAnim = useScrollAnimation();
+
   const education = [
     {
       degree: 'Bachelor of Technology',
@@ -35,7 +38,10 @@ export function Education() {
     <section id="education" className="px-6 py-24 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
-        <div className="mb-16 text-center">
+        <div
+          ref={headerAnim.ref as React.RefObject<HTMLDivElement>}
+          className={`mb-16 text-center animate-on-scroll ${headerAnim.isVisible ? 'is-visible' : ''}`}
+        >
           <h2 className="text-4xl md:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Education</span>
           </h2>
