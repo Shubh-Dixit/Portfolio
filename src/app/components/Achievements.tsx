@@ -18,18 +18,18 @@ export function Achievements() {
 
   const achievements = [
     {
-      icon: Trophy,
-      title: 'Second Rank (2x)',
-      organization: 'CypherSchool',
-      description: 'Secured Second Rank twice among 2000+ participants in the Weekly Competitive Programming Contest.',
-      color: 'from-blue-500 to-purple-500',
-    },
-    {
       icon: Star,
       title: '8th Rank',
       organization: 'Smart India Hackathon',
       description: 'Secured 8th Rank from Lovely Professional University in the Smart India Hackathon.',
       color: 'from-green-500 to-teal-500',
+    },
+    {
+      icon: Trophy,
+      title: 'Second Rank (2x)',
+      organization: 'CypherSchool',
+      description: 'Secured Second Rank twice among 2000+ participants in the Weekly Competitive Programming Contest.',
+      color: 'from-blue-500 to-purple-500',
     },
   ];
 
