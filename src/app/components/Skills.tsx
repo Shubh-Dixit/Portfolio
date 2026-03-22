@@ -38,7 +38,7 @@ export function Skills() {
     {
       icon: Wrench,
       title: 'Libraries / Tools',
-      skills: ['MySQL', 'Google Colab', 'Jupyter', 'GitHub', 'Docker', 'Scikit-learn', 'NumPy', 'Pandas', 'OCR (Tesseract)', 'Gemini API', 'Git'],
+      skills: ['MySQL', 'Google Colab', 'Jupyter', 'GitHub', 'Docker', 'Scikit-learn', 'NumPy', 'Pandas', 'OCR (Tesseract)', 'Gemini API', 'Git', 'n8n'],
       gradient: 'from-orange-500 to-red-500',
     },
     {
