@@ -28,9 +28,8 @@ function ProjectCarousel({ images, setSelectedImage }: { images: string[], setSe
           }`}
         />
       ))}
-      {/* Overlay for clicking */}
-      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 bg-background/50 backdrop-blur-sm">
-        <span className="px-4 py-2 bg-[#6366f1] text-white text-sm font-medium rounded-lg shadow-lg">Click to View</span>
+      <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 bg-black/10 dark:bg-black/50 backdrop-blur-sm">
+        <span className="px-4 py-2 bg-[var(--gradient-start)] text-white text-sm font-medium rounded-full shadow-lg">Click to View</span>
       </div>
     </div>
   );
@@ -54,7 +53,7 @@ function AnimatedProjectCard({ project, setSelectedImage }: { project: Project; 
       ref={ref as React.RefObject<HTMLDivElement>}
       className={`animate-on-scroll ${isVisible ? 'is-visible' : ''}`}
     >
-      <div className="group relative flex flex-col p-8 bg-card border border-border rounded-2xl hover:border-[#6366f1]/50 transition-all duration-300 hover:shadow-2xl hover:shadow-[#6366f1]/10 overflow-hidden">
+      <div className="glass-card group relative flex flex-col p-8 overflow-hidden hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]">
         {/* Gradient overlay */}
         <div className={`absolute inset-0 bg-gradient-to-br ${project.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-300 pointer-events-none`} />
 
@@ -62,7 +61,7 @@ function AnimatedProjectCard({ project, setSelectedImage }: { project: Project; 
           {/* Project Header */}
           <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
             <div className="flex-1">
-              <h3 className="text-2xl font-bold mb-3 group-hover:text-[#6366f1] transition-colors">
+              <h3 className="text-2xl font-bold mb-3 group-hover:text-[var(--gradient-start)] transition-colors">
                 {project.title}
               </h3>
               <p className="text-muted-foreground leading-relaxed">
@@ -76,7 +75,7 @@ function AnimatedProjectCard({ project, setSelectedImage }: { project: Project; 
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-3 bg-secondary border border-border rounded-lg hover:bg-[#6366f1] hover:border-[#6366f1] hover:text-white transition-all duration-300 group/btn"
+                className="p-3 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full hover:bg-[var(--gradient-start)] hover:border-[var(--gradient-start)] hover:text-white transition-all duration-300 group/btn"
                 aria-label="View on GitHub"
               >
                 <Github className="w-5 h-5" />
@@ -86,7 +85,7 @@ function AnimatedProjectCard({ project, setSelectedImage }: { project: Project; 
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="p-3 bg-secondary border border-border rounded-lg hover:bg-[#a855f7] hover:border-[#a855f7] hover:text-white transition-all duration-300 group/btn"
+                  className="p-3 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full hover:bg-[var(--gradient-end)] hover:border-[var(--gradient-end)] hover:text-white transition-all duration-300 group/btn"
                   aria-label="View live demo"
                 >
                   <ExternalLink className="w-5 h-5" />
@@ -100,7 +99,7 @@ function AnimatedProjectCard({ project, setSelectedImage }: { project: Project; 
             {project.tags.map((tag, tagIndex) => (
               <span
                 key={tagIndex}
-                className="px-3 py-1.5 bg-gradient-to-r from-[#6366f1]/10 to-[#a855f7]/10 border border-[#6366f1]/20 rounded-md text-sm font-medium text-foreground/90 hover:border-[#6366f1]/50 hover:bg-gradient-to-r hover:from-[#6366f1]/20 hover:to-[#a855f7]/20 transition-all duration-200"
+                className="px-3 py-1.5 bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10 rounded-full text-sm font-medium text-foreground/90 hover:border-black/20 dark:hover:border-white/20 transition-all duration-200"
               >
                 {tag}
               </span>
@@ -183,10 +182,10 @@ export function Projects() {
           ref={headerAnim.ref as React.RefObject<HTMLDivElement>}
           className={`mb-16 text-center animate-on-scroll ${headerAnim.isVisible ? 'is-visible' : ''}`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Featured <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Projects</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+            Featured <span className="text-gradient drop-shadow-sm">Projects</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#6366f1] to-[#a855f7] mx-auto rounded-full mb-4" />
+          <div className="w-20 h-1 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] mx-auto rounded-full mb-4" />
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Building innovative ML-powered applications that solve real-world problems
           </p>
@@ -205,9 +204,9 @@ export function Projects() {
             href="https://github.com/Shubh-Dixit"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-card border border-border rounded-xl font-semibold hover:bg-secondary hover:border-[#6366f1]/50 transition-all duration-300 group"
+            className="inline-flex items-center gap-2 px-8 py-4 glass-card rounded-full font-semibold hover:bg-black/5 dark:hover:bg-white/10 transition-all duration-300 group"
           >
-            <Github className="w-5 h-5 group-hover:text-[#6366f1] transition-colors" />
+            <Github className="w-5 h-5 group-hover:text-[var(--gradient-start)] transition-colors" />
             View More Projects on GitHub
             <ExternalLink className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>

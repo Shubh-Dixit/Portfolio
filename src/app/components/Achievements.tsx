@@ -43,10 +43,10 @@ export function Achievements() {
           ref={headerAnim.ref as React.RefObject<HTMLDivElement>}
           className={`mb-16 text-center animate-on-scroll ${headerAnim.isVisible ? 'is-visible' : ''}`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Achievements</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+            <span className="text-gradient drop-shadow-sm">Achievements</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#6366f1] to-[#a855f7] mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] mx-auto rounded-full" />
         </div>
 
         {/* Achievements Grid */}
@@ -55,7 +55,7 @@ export function Achievements() {
             const Icon = achievement.icon;
             return (
               <AnimatedCard key={index} delay={delays[index]}>
-                <div className="group relative p-8 bg-card border border-border rounded-2xl hover:border-[#6366f1]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#6366f1]/10 hover:-translate-y-2">
+                <div className="glass-card group relative p-8 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]">
                   {/* Icon with gradient background */}
                   <div className="mb-6">
                     <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${achievement.color} opacity-20 group-hover:opacity-30 transition-opacity`}>
@@ -64,7 +64,7 @@ export function Achievements() {
                   </div>
 
                   {/* Content */}
-                  <h3 className="text-xl font-bold mb-2 group-hover:text-[#6366f1] transition-colors">
+                  <h3 className="text-xl font-bold text-foreground dark:text-white mb-2 group-hover:text-[var(--gradient-start)] transition-colors">
                     {achievement.title}
                   </h3>
                   <p className="text-sm font-semibold text-muted-foreground mb-2">

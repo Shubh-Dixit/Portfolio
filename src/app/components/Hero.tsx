@@ -8,14 +8,14 @@ export function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center px-6 py-20 overflow-hidden">
       {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#6366f1]/20 via-transparent to-[#a855f7]/20 pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(99,102,241,0.1),transparent)]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-[var(--gradient-start)]/10 via-transparent to-[var(--gradient-end)]/10 pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_120%,rgba(139,92,246,0.15),transparent)]" />
       
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto text-center">
         {/* Profile Picture */}
         <div className="flex justify-center mb-8">
-          <div className="relative w-48 h-48 rounded-full p-1 bg-gradient-to-tr from-[#6366f1] to-[#a855f7]">
+          <div className="relative w-48 h-48 rounded-full p-1 bg-gradient-to-tr from-[var(--gradient-start)] to-[var(--gradient-end)] shadow-[0_0_30px_rgba(139,92,246,0.2)]">
             <img 
               src="/resources/shubh_dixit_profile.jpg" 
               alt="Shubh Dixit" 
@@ -25,19 +25,18 @@ export function Hero() {
         </div>
 
         {/* Greeting */}
-        <div className="inline-block mb-6 px-4 py-2 rounded-full bg-card/50 border border-border backdrop-blur-sm">
+        <div className="inline-block mb-6 px-4 py-2 rounded-full glass-card">
           <p className="text-sm text-muted-foreground">👋 Welcome to my portfolio</p>
         </div>
 
         {/* Name with gradient */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 tracking-tight">
-          <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold mb-6 tracking-tighter">
+          <span className="text-gradient drop-shadow-sm">
             Shubh Dixit
           </span>
         </h1>
 
-        {/* Tagline */}
-        <p className="text-xl md:text-2xl lg:text-3xl text-foreground/90 mb-4 font-medium">
+        <p className="text-xl md:text-2xl lg:text-3xl text-foreground/90 dark:text-white/90 mb-4 font-medium tracking-tight">
           Building ML-powered full-stack applications | Java Backend Developer
         </p>
         <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
@@ -48,7 +47,7 @@ export function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
           <button
             onClick={scrollToProjects}
-            className="group px-8 py-4 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-lg font-semibold text-white shadow-lg hover:shadow-xl hover:shadow-[#6366f1]/50 transition-all duration-300 flex items-center gap-2"
+            className="group px-8 py-4 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] rounded-full font-semibold text-white shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] hover:-translate-y-1 transition-all duration-300 flex items-center gap-2"
           >
             View Projects
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -58,27 +57,24 @@ export function Hero() {
             href="https://github.com/Shubh-Dixit"
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 bg-card border border-border rounded-lg font-semibold hover:bg-secondary transition-all duration-300 flex items-center gap-2"
+            className="px-8 py-4 glass-card rounded-full font-semibold text-foreground dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
           >
             <Github className="w-5 h-5" />
             GitHub
           </a>
           
           <button
-  onClick={() =>
-    window.open(
-      "https://drive.google.com/file/d/1gxEsJSLkyWx9XWxnUGjM2KNabTf6S2Pm/view?usp=sharing",
-      "_blank"
-    )
-  }
-  className="px-8 py-4 bg-card border border-border rounded-lg font-semibold 
-             hover:bg-secondary hover:scale-105 active:scale-95
-             transition-all duration-300 
-             flex items-center gap-2"
->
-  <Download className="w-5 h-5" />
-  Resume
-</button>
+            onClick={() =>
+              window.open(
+                "https://drive.google.com/file/d/1gxEsJSLkyWx9XWxnUGjM2KNabTf6S2Pm/view?usp=sharing",
+                "_blank"
+              )
+            }
+            className="px-8 py-4 glass-card rounded-full font-semibold text-foreground dark:text-white hover:bg-black/5 dark:hover:bg-white/10 transition-all duration-300 flex items-center gap-2"
+          >
+            <Download className="w-5 h-5" />
+            Resume
+          </button>
 
         </div>
 
@@ -88,7 +84,7 @@ export function Hero() {
             href="https://www.linkedin.com/in/shubh-dixit/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-[#6366f1] transition-colors"
+            className="text-muted-foreground hover:text-foreground dark:hover:text-white transition-colors"
             aria-label="LinkedIn"
           >
             <Linkedin className="w-6 h-6" />

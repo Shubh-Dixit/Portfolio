@@ -92,10 +92,10 @@ export function Contact() {
       <div className="max-w-6xl mx-auto">
         {/* Section header */}
         <div className="mb-16 text-center">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            Get In <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Touch</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+            Get In <span className="text-gradient drop-shadow-sm">Touch</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#6366f1] to-[#a855f7] mx-auto rounded-full mb-4" />
+          <div className="w-20 h-1 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] mx-auto rounded-full mb-4" />
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
             Interested in working together or have a question? Feel free to reach out!
           </p>
@@ -121,14 +121,14 @@ export function Contact() {
                     href={item.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 p-4 bg-card border border-border rounded-xl hover:border-[#6366f1]/50 transition-all duration-300 hover:shadow-lg hover:shadow-[#6366f1]/10"
+                    className="glass-card group flex items-center gap-4 p-4 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]"
                   >
-                    <div className="p-3 bg-gradient-to-br from-[#6366f1]/20 to-[#a855f7]/20 rounded-lg group-hover:from-[#6366f1]/30 group-hover:to-[#a855f7]/30 transition-all">
-                      <Icon className="w-6 h-6 text-[#6366f1]" />
+                    <div className="p-3 bg-gradient-to-br from-[var(--gradient-start)]/20 to-[var(--gradient-end)]/20 rounded-lg group-hover:from-[var(--gradient-start)]/30 group-hover:to-[var(--gradient-end)]/30 transition-all border border-black/5 dark:border-white/5">
+                      <Icon className="w-6 h-6 text-[var(--gradient-start)]" />
                     </div>
                     <div>
                       <p className="text-sm text-muted-foreground">{item.label}</p>
-                      <p className="font-semibold group-hover:text-[#6366f1] transition-colors">
+                      <p className="font-semibold text-foreground dark:text-white group-hover:text-[var(--gradient-start)] transition-colors">
                         {item.value}
                       </p>
                     </div>
@@ -138,18 +138,18 @@ export function Contact() {
             </div>
 
             {/* Additional info */}
-            <div className="p-6 bg-card border border-border rounded-xl">
+            <div className="p-6 glass-card">
               <div className="flex items-start gap-3 mb-4">
-                <MapPin className="w-5 h-5 text-[#6366f1] mt-1" />
+                <MapPin className="w-5 h-5 text-[var(--gradient-start)] mt-1" />
                 <div>
-                  <p className="font-semibold mb-1">Location</p>
+                  <p className="font-semibold text-foreground dark:text-white mb-1">Location</p>
                   <p className="text-sm text-muted-foreground">Punjab, India</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-[#6366f1] mt-1" />
+                <Phone className="w-5 h-5 text-[var(--gradient-start)] mt-1" />
                 <div>
-                  <p className="font-semibold mb-1">Availability</p>
+                  <p className="font-semibold text-foreground dark:text-white mb-1">Availability</p>
                   <p className="text-sm text-muted-foreground">Open to internships & full-time roles</p>
                 </div>
               </div>
@@ -157,11 +157,11 @@ export function Contact() {
           </div>
 
           {/* Contact Form */}
-          <div className="p-8 bg-card border border-border rounded-2xl">
-            <h3 className="text-2xl font-bold mb-6">Send a Message</h3>
+          <div className="p-8 glass-card">
+            <h3 className="text-2xl font-bold text-foreground dark:text-white mb-6">Send a Message</h3>
             <form ref={form} onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label htmlFor="name" className="block text-sm font-medium text-foreground dark:text-white mb-2">
                   Name
                 </label>
                 <input
@@ -171,13 +171,13 @@ export function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6366f1] focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-black/5 dark:bg-black/40 border border-black/10 dark:border-white/10 rounded-lg text-foreground dark:text-white focus:outline-none focus:ring-2 focus:ring-[var(--gradient-start)] focus:border-transparent transition-all"
                   placeholder="Your name"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label htmlFor="email" className="block text-sm font-medium text-foreground dark:text-white mb-2">
                   Email
                 </label>
                 <input
@@ -187,13 +187,13 @@ export function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6366f1] focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-black/5 dark:bg-black/40 border border-black/10 dark:border-white/10 rounded-lg text-foreground dark:text-white focus:outline-none focus:ring-2 focus:ring-[var(--gradient-start)] focus:border-transparent transition-all"
                   placeholder="your.email@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="subject" className="block text-sm font-medium mb-2">
+                <label htmlFor="subject" className="block text-sm font-medium text-foreground dark:text-white mb-2">
                   Subject
                 </label>
                 <input
@@ -203,13 +203,13 @@ export function Contact() {
                   value={formData.subject}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6366f1] focus:border-transparent transition-all"
+                  className="w-full px-4 py-3 bg-black/5 dark:bg-black/40 border border-black/10 dark:border-white/10 rounded-lg text-foreground dark:text-white focus:outline-none focus:ring-2 focus:ring-[var(--gradient-start)] focus:border-transparent transition-all"
                   placeholder="What's this about?"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label htmlFor="message" className="block text-sm font-medium text-foreground dark:text-white mb-2">
                   Message
                 </label>
                 <textarea
@@ -219,7 +219,7 @@ export function Contact() {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 bg-input border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#6366f1] focus:border-transparent transition-all resize-none"
+                  className="w-full px-4 py-3 bg-black/5 dark:bg-black/40 border border-black/10 dark:border-white/10 rounded-lg text-foreground dark:text-white focus:outline-none focus:ring-2 focus:ring-[var(--gradient-start)] focus:border-transparent transition-all resize-none"
                   placeholder="Your message..."
                 />
               </div>
@@ -227,7 +227,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full px-8 py-4 bg-gradient-to-r from-[#6366f1] to-[#a855f7] rounded-lg font-semibold text-white shadow-lg hover:shadow-xl hover:shadow-[#6366f1]/50 transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
+                className="w-full px-8 py-4 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] rounded-full font-semibold text-white shadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(6,182,212,0.4)] transition-all duration-300 flex items-center justify-center gap-2 group disabled:opacity-70 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? (
                   <>

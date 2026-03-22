@@ -10,6 +10,7 @@ import { Education } from './components/Education';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
 import { Toaster } from './components/ui/sonner';
+import { ScrollToTop } from './components/ScrollToTop';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Education />
         <Contact />
         <Footer />
+        <ScrollToTop />
         <Toaster />
       </div>
     </ThemeProvider>

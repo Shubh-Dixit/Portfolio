@@ -38,7 +38,7 @@ export function Navbar() {
     <nav 
       className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background/80 backdrop-blur-md shadow-md py-4' 
+          ? 'bg-black/50 backdrop-blur-md border-b border-white/10 shadow-md py-4' 
           : 'bg-transparent py-6'
       }`}
     >
@@ -46,7 +46,7 @@ export function Navbar() {
         <a 
           href="#home" 
           onClick={(e) => handleScrollTo(e, '#home')}
-          className="text-xl md:text-2xl font-bold bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent hover:opacity-80 transition-opacity"
+          className="text-xl md:text-2xl font-bold text-gradient hover:opacity-80 transition-opacity"
         >
           SD
         </a>
@@ -58,7 +58,7 @@ export function Navbar() {
               key={link.name}
               href={link.href}
               onClick={(e) => handleScrollTo(e, link.href)}
-              className="text-sm font-semibold text-foreground/80 hover:text-[#6366f1] transition-colors"
+              className="text-sm font-semibold text-foreground/70 hover:text-white transition-colors"
             >
               {link.name}
             </a>
@@ -82,13 +82,13 @@ export function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="lg:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-xl border-b border-border shadow-lg py-4 px-6 flex flex-col gap-4">
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-[#0a0a0a]/95 backdrop-blur-xl border-b border-white/10 shadow-lg py-4 px-6 flex flex-col gap-4">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={(e) => handleScrollTo(e, link.href)}
-              className="text-lg font-medium text-foreground/80 hover:text-[#6366f1] transition-colors py-3 border-b border-border/50"
+              className="text-lg font-medium text-foreground/70 hover:text-white transition-colors py-3 border-b border-white/5"
             >
               {link.name}
             </a>

@@ -42,16 +42,16 @@ export function Education() {
           ref={headerAnim.ref as React.RefObject<HTMLDivElement>}
           className={`mb-16 text-center animate-on-scroll ${headerAnim.isVisible ? 'is-visible' : ''}`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Education</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+            <span className="text-gradient drop-shadow-sm">Education</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#6366f1] to-[#a855f7] mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] mx-auto rounded-full" />
         </div>
 
         {/* Timeline */}
         <div className="relative">
           {/* Timeline line */}
-          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#6366f1] to-[#a855f7]" />
+          <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[var(--gradient-start)]/50 to-[var(--gradient-end)]/50" />
 
           {/* Education items */}
           <div className="space-y-12">
@@ -64,17 +64,17 @@ export function Education() {
               >
                 {/* Card */}
                 <div className="w-full md:w-[calc(50%-2rem)] group">
-                  <div className="p-8 bg-card border border-border rounded-2xl hover:border-[#6366f1]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#6366f1]/10">
+                  <div className="glass-card p-8 hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]">
                     {/* Icon */}
                     <div className="flex items-start justify-between mb-4">
                       <div className="text-4xl">{item.icon}</div>
-                      <div className="px-3 py-1 bg-gradient-to-r from-[#6366f1]/20 to-[#a855f7]/20 border border-[#6366f1]/30 rounded-full text-sm font-medium">
+                      <div className="px-3 py-1 bg-[var(--gradient-start)]/10 border border-[var(--gradient-start)]/30 rounded-full text-[var(--gradient-start)] text-sm font-medium">
                         {item.grade}
                       </div>
                     </div>
 
                     {/* Content */}
-                    <h3 className="text-2xl font-bold mb-2 group-hover:text-[#6366f1] transition-colors">
+                    <h3 className="text-2xl font-bold text-foreground dark:text-white mb-2 group-hover:text-[var(--gradient-start)] transition-colors">
                       {item.degree}
                     </h3>
                     <p className="text-lg font-semibold text-foreground/80 mb-4">
@@ -99,8 +99,8 @@ export function Education() {
                 </div>
 
                 {/* Timeline dot */}
-                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-8 h-8 bg-gradient-to-br from-[#6366f1] to-[#a855f7] rounded-full items-center justify-center shadow-lg shadow-[#6366f1]/50 z-10">
-                  <div className="w-3 h-3 bg-background rounded-full" />
+                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 w-8 h-8 bg-gradient-to-br from-[var(--gradient-start)] to-[var(--gradient-end)] rounded-full items-center justify-center shadow-[0_0_15px_rgba(139,92,246,0.5)] z-10">
+                  <div className="w-3 h-3 bg-black rounded-full" />
                 </div>
 
                 {/* Spacer for the other side */}

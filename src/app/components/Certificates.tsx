@@ -33,10 +33,10 @@ export function Certificates() {
           ref={headerAnim.ref as React.RefObject<HTMLDivElement>}
           className={`mb-16 text-center animate-on-scroll ${headerAnim.isVisible ? 'is-visible' : ''}`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-[#6366f1] to-[#a855f7] bg-clip-text text-transparent">Certificates</span>
+          <h2 className="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
+            <span className="text-gradient drop-shadow-sm">Certificates</span>
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-[#6366f1] to-[#a855f7] mx-auto rounded-full" />
+          <div className="w-20 h-1 bg-gradient-to-r from-[var(--gradient-start)] to-[var(--gradient-end)] mx-auto rounded-full" />
         </div>
 
         {/* Certificates Grid */}
@@ -46,7 +46,7 @@ export function Certificates() {
             return (
               <div
                 key={index}
-                className="group relative flex flex-col p-8 bg-card border border-border rounded-2xl hover:border-[#6366f1]/50 transition-all duration-300 hover:shadow-xl hover:shadow-[#6366f1]/10 hover:-translate-y-2 cursor-pointer"
+                className="glass-card group relative flex flex-col p-8 cursor-pointer hover:shadow-[0_0_30px_rgba(139,92,246,0.15)]"
                 onClick={() => setSelectedImage(cert.image)}
               >
                 {/* Icon with gradient background */}
@@ -54,13 +54,13 @@ export function Certificates() {
                   <div className={`inline-flex p-4 rounded-xl bg-gradient-to-br ${cert.color} opacity-20 group-hover:opacity-30 transition-opacity`}>
                     <Icon className={`w-8 h-8 bg-gradient-to-br ${cert.color} bg-clip-text`} style={{ WebkitTextFillColor: 'transparent' }} />
                   </div>
-                  <span className="text-sm font-medium text-muted-foreground px-3 py-1 rounded-full bg-secondary/50 border border-border">
+                  <span className="text-sm font-medium text-foreground/70 dark:text-white/70 px-3 py-1 rounded-full bg-black/5 dark:bg-white/5 border border-black/10 dark:border-white/10">
                     {cert.date}
                   </span>
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold mb-2 group-hover:text-[#6366f1] transition-colors z-10">
+                <h3 className="text-xl font-bold text-foreground dark:text-white mb-2 group-hover:text-[var(--gradient-start)] transition-colors z-10">
                   {cert.title}
                 </h3>
                 <p className="text-lg font-semibold text-muted-foreground z-10 mb-6">
@@ -68,15 +68,15 @@ export function Certificates() {
                 </p>
 
                 {/* Image Thumbnail */}
-                <div className="relative mt-auto w-full h-48 rounded-xl overflow-hidden border border-border group-hover:border-[#6366f1]/30 transition-colors">
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors z-10" />
+                <div className="relative mt-auto w-full h-48 rounded-xl overflow-hidden border border-black/10 dark:border-white/10 group-hover:border-[var(--gradient-start)]/50 transition-colors">
+                  <div className="absolute inset-0 bg-black/5 dark:bg-black/40 group-hover:bg-transparent transition-colors z-10" />
                   <img 
                     src={cert.image} 
                     alt={`${cert.title} Certificate`} 
                     className="w-full h-full object-cover object-top"
                   />
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 bg-background/50 backdrop-blur-sm">
-                    <span className="px-4 py-2 bg-[#6366f1] text-white text-sm font-medium rounded-lg shadow-lg">Click to View</span>
+                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity z-20 bg-black/10 dark:bg-black/50 backdrop-blur-sm">
+                    <span className="px-4 py-2 bg-[var(--gradient-start)] text-white text-sm font-medium rounded-full shadow-lg">Click to View</span>
                   </div>
                 </div>
 
